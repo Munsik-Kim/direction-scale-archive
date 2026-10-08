@@ -1,0 +1,23 @@
+{
+  "records": [
+    {
+      "seed": 901,
+      "U_H_fixed": 0.18301886070257944,
+      "U_H_joint": 0.28487399927573465,
+      "D_seed": 0.1018551385731552,
+      "Fixed_feasible": true,
+      "Joint_worse_required_for_PASS": false
+    },
+    {
+      "seed": 902,
+      "U_H_fixed": 0.1812645127022342,
+      "U_H_joint": 0.2828500357922174,
+      "D_seed": 0.1015855230899832,
+      "Fixed_feasible": true,
+      "Joint_worse_required_for_PASS": false
+    }
+  ],
+  "scope": "two prescribed fixed models and finite-query law; descriptive development hard-Risk area, no seed population Sign test",
+  "U_H_definition": "trapezoid hard Risk / (2*C), C=30000",
+  "raw_and_calibrated_separated": true
+}

@@ -1,0 +1,83 @@
+claim_id,experiment_family,metric,value,exact_fraction,unit,scope,source_level,source_file
+swin1103_HOLD_COMMON_CLIP_U,swin_common_clipping,U_train_H_error,0.059860248447204972,771/12880,mean error rate over steps,240-image census; groups equally weighted; C=1000,recorded_group_counts,selected/swin_1103_train_hard_counts.csv
+swin1103_NATIVE_COMMON_CLIP_U,swin_common_clipping,U_train_H_error,0.061296583850931674,1579/25760,mean error rate over steps,240-image census; groups equally weighted; C=1000,recorded_group_counts,selected/swin_1103_train_hard_counts.csv
+swin1103_delta,swin_common_clipping,NCC_minus_HCC_error_AUC,0.0014363354037267081,37/25760,error-rate area,same dataset; one paired training seed,recorded_group_counts,selected/swin_1103_train_hard_counts.csv
+swin1103_HOLD_COMMON_CLIP_wga,swin_common_clipping,final_validation_WGA,0.75939849624060152,101/133,accuracy,k=1000; min over four groups,recorded_group_counts,selected/swin_1103_validation_counts.csv
+swin1103_HOLD_COMMON_CLIP_frequency,swin_common_clipping,final_validation_frequency_accuracy,0.91326105087572973,1095/1199,accuracy,observed validation group frequencies,recorded_group_counts,selected/swin_1103_validation_counts.csv
+swin1103_NATIVE_COMMON_CLIP_wga,swin_common_clipping,final_validation_WGA,0.72180451127819545,96/133,accuracy,k=1000; min over four groups,recorded_group_counts,selected/swin_1103_validation_counts.csv
+swin1103_NATIVE_COMMON_CLIP_frequency,swin_common_clipping,final_validation_frequency_accuracy,0.92160133444537118,1105/1199,accuracy,observed validation group frequencies,recorded_group_counts,selected/swin_1103_validation_counts.csv
+swin1104_HOLD_COMMON_CLIP_U,swin_common_clipping,U_train_H_error,0.066440217391304346,489/7360,mean error rate over steps,240-image census; groups equally weighted; C=1000,recorded_group_counts,selected/swin_1104_train_hard_counts.csv
+swin1104_NATIVE_COMMON_CLIP_U,swin_common_clipping,U_train_H_error,0.064518633540372669,831/12880,mean error rate over steps,240-image census; groups equally weighted; C=1000,recorded_group_counts,selected/swin_1104_train_hard_counts.csv
+swin1104_delta,swin_common_clipping,NCC_minus_HCC_error_AUC,-0.001921583850931677,-99/51520,error-rate area,same dataset; one paired training seed,recorded_group_counts,selected/swin_1104_train_hard_counts.csv
+swin1104_HOLD_COMMON_CLIP_wga,swin_common_clipping,final_validation_WGA,0.6992481203007519,93/133,accuracy,k=1000; min over four groups,recorded_group_counts,selected/swin_1104_validation_counts.csv
+swin1104_HOLD_COMMON_CLIP_frequency,swin_common_clipping,final_validation_frequency_accuracy,0.86572143452877393,1038/1199,accuracy,observed validation group frequencies,recorded_group_counts,selected/swin_1104_validation_counts.csv
+swin1104_NATIVE_COMMON_CLIP_wga,swin_common_clipping,final_validation_WGA,0.65413533834586468,87/133,accuracy,k=1000; min over four groups,recorded_group_counts,selected/swin_1104_validation_counts.csv
+swin1104_NATIVE_COMMON_CLIP_frequency,swin_common_clipping,final_validation_frequency_accuracy,0.8990825688073395,98/109,accuracy,observed validation group frequencies,recorded_group_counts,selected/swin_1104_validation_counts.csv
+pilot1101_BALANCED_REFERENCE_wga,swin_pilot,final_validation_WGA,0.63157894736842102,12/19,accuracy,k=1000; original clipping policies,recorded_group_counts,selected/swin_pilot_validation_groups.csv
+pilot1101_HOLD_wga,swin_pilot,final_validation_WGA,0.50375939849624063,67/133,accuracy,k=1000; original clipping policies,recorded_group_counts,selected/swin_pilot_validation_groups.csv
+pilot1101_NATIVE_wga,swin_pilot,final_validation_WGA,0.75939849624060152,101/133,accuracy,k=1000; original clipping policies,recorded_group_counts,selected/swin_pilot_validation_groups.csv
+pilot1101_delta,swin_pilot,Delta_H_validation_CE,0.058145459399126631,,nat,full-horizon trapezoid; two hard groups equally weighted,recorded_group_CE,selected/swin_pilot_validation_groups.csv
+pilot1102_BALANCED_REFERENCE_wga,swin_pilot,final_validation_WGA,0.73390557939914158,171/233,accuracy,k=1000; original clipping policies,recorded_group_counts,selected/swin_pilot_validation_groups.csv
+pilot1102_HOLD_wga,swin_pilot,final_validation_WGA,0.66165413533834583,88/133,accuracy,k=1000; original clipping policies,recorded_group_counts,selected/swin_pilot_validation_groups.csv
+pilot1102_NATIVE_wga,swin_pilot,final_validation_WGA,0.69172932330827064,92/133,accuracy,k=1000; original clipping policies,recorded_group_counts,selected/swin_pilot_validation_groups.csv
+pilot1102_delta,swin_pilot,Delta_H_validation_CE,0.46977471793722048,,nat,full-horizon trapezoid; two hard groups equally weighted,recorded_group_CE,selected/swin_pilot_validation_groups.csv
+qwen13_DEV_EO_EM,qwen_evidence,EM_count,105,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_EO_decoy,qwen_evidence,decoy_count,0,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_N_EM,qwen_evidence,EM_count,91,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_N_decoy,qwen_evidence,decoy_count,3,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_C_EM,qwen_evidence,EM_count,87,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_C_decoy,qwen_evidence,decoy_count,10,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_QO_EM,qwen_evidence,EM_count,0,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_QO_decoy,qwen_evidence,decoy_count,0,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_CF_EM,qwen_evidence,EM_count,101,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_CF_decoy,qwen_evidence,decoy_count,0,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_DEV_delta,qwen_evidence,C_minus_N_decoy_rate,0.0546875,7/128,rate,128 unique questions; five paired variants,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_EO_EM,qwen_evidence,EM_count,108,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_EO_decoy,qwen_evidence,decoy_count,0,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_N_EM,qwen_evidence,EM_count,93,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_N_decoy,qwen_evidence,decoy_count,10,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_C_EM,qwen_evidence,EM_count,83,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_C_decoy,qwen_evidence,decoy_count,22,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_QO_EM,qwen_evidence,EM_count,0,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_QO_decoy,qwen_evidence,decoy_count,0,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_CF_EM,qwen_evidence,EM_count,107,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_CF_decoy,qwen_evidence,decoy_count,0,,count out of 128,historical split; aggregate-only,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen13_HELDOUT_delta,qwen_evidence,C_minus_N_decoy_rate,0.09375,3/32,rate,128 unique questions; five paired variants,stored_aggregate,selected/qwen_evidence_counts.csv
+qwen14_DEV_1_D,qwen_layer0,C_minus_N_decoy_rate,0.0546875,7/128,rate,r multiplies scores; gains multiply by sqrt(r); reused split,stored_aggregate,selected/qwen_layer0_counts.csv
+qwen14_DEV_4/5_D,qwen_layer0,C_minus_N_decoy_rate,0.0546875,7/128,rate,r multiplies scores; gains multiply by sqrt(r); reused split,stored_aggregate,selected/qwen_layer0_counts.csv
+qwen14_DEV_5/4_D,qwen_layer0,C_minus_N_decoy_rate,0.0703125,9/128,rate,r multiplies scores; gains multiply by sqrt(r); reused split,stored_aggregate,selected/qwen_layer0_counts.csv
+qwen14_DEV_P14,qwen_layer0,P14_BASE_minus_LOW_contrast,0,0,rate,reused HELDOUT is primary; DEV auxiliary,stored_aggregate,selected/qwen_layer0_counts.csv
+qwen14_HELDOUT_1_D,qwen_layer0,C_minus_N_decoy_rate,0.09375,3/32,rate,r multiplies scores; gains multiply by sqrt(r); reused split,stored_aggregate,selected/qwen_layer0_counts.csv
+qwen14_HELDOUT_4/5_D,qwen_layer0,C_minus_N_decoy_rate,0.1015625,13/128,rate,r multiplies scores; gains multiply by sqrt(r); reused split,stored_aggregate,selected/qwen_layer0_counts.csv
+qwen14_HELDOUT_5/4_D,qwen_layer0,C_minus_N_decoy_rate,0.09375,3/32,rate,r multiplies scores; gains multiply by sqrt(r); reused split,stored_aggregate,selected/qwen_layer0_counts.csv
+qwen14_HELDOUT_P14,qwen_layer0,P14_BASE_minus_LOW_contrast,-0.0078125,-1/128,rate,reused HELDOUT is primary; DEV auxiliary,stored_aggregate,selected/qwen_layer0_counts.csv
+qwen15_DEV_EO_slope,qwen_radial,answer_loss_directional_derivative,-2.1047816458385125,,nat/answer-token per unit t,one DEV-N-selected direction; no training trajectory,stored_layer_contributions,selected/qwen_radial_layer_contributions.csv
+qwen15_DEV_N_slope,qwen_radial,answer_loss_directional_derivative,-3.2773209985784288,,nat/answer-token per unit t,one DEV-N-selected direction; no training trajectory,stored_layer_contributions,selected/qwen_radial_layer_contributions.csv
+qwen15_DEV_C_slope,qwen_radial,answer_loss_directional_derivative,-3.2477023434841592,,nat/answer-token per unit t,one DEV-N-selected direction; no training trajectory,stored_layer_contributions,selected/qwen_radial_layer_contributions.csv
+qwen15_DEV_CF_slope,qwen_radial,answer_loss_directional_derivative,-1.8378774345166609,,nat/answer-token per unit t,one DEV-N-selected direction; no training trajectory,stored_layer_contributions,selected/qwen_radial_layer_contributions.csv
+qwen15_HELDOUT_EO_slope,qwen_radial,answer_loss_directional_derivative,-1.6070578359911036,,nat/answer-token per unit t,one DEV-N-selected direction; no training trajectory,stored_layer_contributions,selected/qwen_radial_layer_contributions.csv
+qwen15_HELDOUT_N_slope,qwen_radial,answer_loss_directional_derivative,-2.4693638985164537,,nat/answer-token per unit t,one DEV-N-selected direction; no training trajectory,stored_layer_contributions,selected/qwen_radial_layer_contributions.csv
+qwen15_HELDOUT_C_slope,qwen_radial,answer_loss_directional_derivative,-2.9781700503494144,,nat/answer-token per unit t,one DEV-N-selected direction; no training trajectory,stored_layer_contributions,selected/qwen_radial_layer_contributions.csv
+qwen15_HELDOUT_CF_slope,qwen_radial,answer_loss_directional_derivative,-1.1332211102171366,,nat/answer-token per unit t,one DEV-N-selected direction; no training trajectory,stored_layer_contributions,selected/qwen_radial_layer_contributions.csv
+controlled_COMPLETE_EVENT,controlled_loss_coordinate,COMPLETE_EVENT,42,,cells out of 54,three losses x two coordinates x nine rates,stored_aggregate,selected/controlled_loss_coordinate_cells.csv
+controlled_RIGHT_CENSORED_PHYSICAL_HORIZON,controlled_loss_coordinate,RIGHT_CENSORED_PHYSICAL_HORIZON,12,,cells out of 54,three losses x two coordinates x nine rates,stored_aggregate,selected/controlled_loss_coordinate_cells.csv
+STRONG_H3_TRAIN_VO_FIXED_SLOW_L1,attention_vo,final_group_MSE,1.5264141289464142e-05,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_FIXED_SLOW_grid.npz
+STRONG_H3_TRAIN_VO_FIXED_SLOW_L2,attention_vo,final_group_MSE,0.0048373667659173634,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_FIXED_SLOW_grid.npz
+STRONG_H3_TRAIN_VO_JOINT_0.003_L1,attention_vo,final_group_MSE,0.0038081163046484673,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_JOINT_0.003_grid.npz
+STRONG_H3_TRAIN_VO_JOINT_0.003_L2,attention_vo,final_group_MSE,1.8474173534499387,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_JOINT_0.003_grid.npz
+STRONG_H3_TRAIN_VO_JOINT_0.1_L1,attention_vo,final_group_MSE,1.6431846668386516e-05,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_JOINT_0.1_grid.npz
+STRONG_H3_TRAIN_VO_JOINT_0.1_L2,attention_vo,final_group_MSE,0.0044366971333190258,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_JOINT_0.1_grid.npz
+WEAK_H3_TRAIN_VO_FIXED_SLOW_L1,attention_vo,final_group_MSE,1.5822016289564694e-06,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/WEAK_H3_TRAIN_VO_FIXED_SLOW_grid.npz
+WEAK_H3_TRAIN_VO_FIXED_SLOW_L2,attention_vo,final_group_MSE,0.00062753524635738808,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/WEAK_H3_TRAIN_VO_FIXED_SLOW_grid.npz
+WEAK_H3_TRAIN_VO_JOINT_0.003_L1,attention_vo,final_group_MSE,3.985669855237773e-07,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/WEAK_H3_TRAIN_VO_JOINT_0.003_grid.npz
+WEAK_H3_TRAIN_VO_JOINT_0.003_L2,attention_vo,final_group_MSE,0.00013660670339652505,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/WEAK_H3_TRAIN_VO_JOINT_0.003_grid.npz
+WEAK_H3_TRAIN_VO_JOINT_0.1_L1,attention_vo,final_group_MSE,1.0629702122765399e-06,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/WEAK_H3_TRAIN_VO_JOINT_0.1_grid.npz
+WEAK_H3_TRAIN_VO_JOINT_0.1_L2,attention_vo,final_group_MSE,0.00042542509388013132,,MSE,tau=40; fixed paths reused across two rho labels,saved_synthetic_state,selected/states/WEAK_H3_TRAIN_VO_JOINT_0.1_grid.npz
+P17,attention_vo,P17_wrong_rank_low_both_occupation,0,0,fraction of slow-time horizon,401 nodes; continuous absence not certified,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_JOINT_0.003_grid.npz
+readout_norm_lower,readout_posthoc,target_norm_lower_recorded,2964.6838300406789,,L2 coefficient norm,fixed attention; both group MSE<=.1; old solver not rerun,recorded_static_bracket,selected/readout_target_norm_records.csv
+readout_norm_upper,readout_posthoc,target_norm_upper_witness,2964.6838404660793,,L2 coefficient norm,"original feasible coefficient evaluated only, not fitted",saved_static_witness,selected/readout_target_norm_records.csv
+readout_norm_actual,readout_posthoc,actual_coefficient_norm,0.99216522577302779,,L2 coefficient norm,tau=40; factorized V/O,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_JOINT_0.003_grid.npz
+readout_LS_norm,readout_posthoc,weighted_LS_coefficient_norm,4342.6832919876251,,L2 coefficient norm,unconstrained weighted LS; different from .1-per-group target,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_JOINT_0.003_grid.npz
+small_singular_energy_share,readout_posthoc,instantaneous_residual_small_resolved_subspace_fraction,0.99997769258446134,,fraction,instantaneous residual share; not causal failure attribution,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_JOINT_0.003_grid.npz
+readout_Jdot_VO,readout_posthoc,weighted_Jdot_VO,-1.0237264425286602e-06,,MSE per unit slow tau,instantaneous formula; no numerical integration,saved_synthetic_state,selected/states/STRONG_H3_TRAIN_VO_JOINT_0.003_grid.npz
+unresolved_quadratures,readout_posthoc,INTEGRAL_UNRESOLVED,18,,records out of 18,historical .1/.2-grid checks; no attempt to resolve,stored_aggregate,selected/readout_quadrature_unresolved.csv
