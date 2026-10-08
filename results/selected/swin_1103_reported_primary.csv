@@ -1,0 +1,14 @@
+metric,value,exact_fraction,scope
+U_train_H_error_NCC,0.061296583850931674,1579/25760,PRIMARY full240 group-macro error
+U_train_H_error_HCC,0.05986024844720497,771/12880,PRIMARY full240 group-macro error
+Delta_train_H_error,0.001436335403726708,37/25760,PRIMARY NCC minus HCC
+training_eval_Delta_H_CE,0.0013197336085941647,,SECONDARY; no pooling with STEP11
+training_eval_Delta_E_CE,0.0009424850308549573,,SECONDARY; no pooling with STEP11
+training_eval_Delta_selective_CE,0.00037724857773920734,,SECONDARY; no pooling with STEP11
+training_eval_Delta_H_error,0.0014363354037267018,,SECONDARY; no pooling with STEP11
+training_eval_Delta_H_pooled_error,0.0012499999999999942,,SECONDARY; no pooling with STEP11
+validation_Delta_H_CE,0.011934993000846994,,SECONDARY; no pooling with STEP11
+validation_Delta_E_CE,-0.00018045967076729674,,SECONDARY; no pooling with STEP11
+validation_Delta_selective_CE,0.01211545267161429,,SECONDARY; no pooling with STEP11
+validation_Delta_H_error,0.010544467391655044,,SECONDARY; no pooling with STEP11
+validation_Delta_H_pooled_error,0.013689482470784664,,SECONDARY; no pooling with STEP11

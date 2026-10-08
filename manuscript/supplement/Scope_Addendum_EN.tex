@@ -1,0 +1,190 @@
+% !TeX program = xelatex
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=25mm,headheight=13pt]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Nimbus Roman}{\setmainfont{Nimbus Roman}}{\setmainfont{TeX Gyre Termes}}
+\usepackage{amsmath,amssymb,amsthm,mathtools,unicode-math}
+\IfFontExistsTF{Asana Math}{\setmathfont{Asana Math}}{\setmathfont{latinmodern-math.otf}}
+\usepackage{booktabs,tabularx,longtable,graphicx,fancyhdr,microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newcommand{\E}{\mathbb E}\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\setlength{\parskip}{3pt}\setlength{\jot}{4pt}\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.12}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\footnotesize Shared-Scale Attention: technical addendum}\fancyhead[R]{\footnotesize v0.5}\fancyfoot[C]{\thepage}
+\begin{document}
+\begin{center}{\Large\bfseries Loss Tails, Scale Mobility, and Evidence Scope}\par\vspace{5pt}Supplement to the v0.5 manuscript\end{center}
+The earlier complete English proof supplement is preserved separately. This addendum supplies direct derivations used in the revised main text, defines the unproved extensions, and records the evidence supporting the new tables. It does not replace the established copy-MSE theorem with a theorem for all losses. The algebra below was written during the revision and has not undergone a separate external mathematical review.
+\appendix
+\section{Exact identities and a conditional bounded-scale estimate}
+\subsection{Two readout losses and pointer supervision}
+Let $A=\sigma(z)$, let $V_0,V_1$ be independent uniform signs, and let $f=AV_0+(1-A)V_1$, $Y=V_0$. If $V_1=V_0$, then $f-Y=0$. If $V_1=-V_0$, then $(f-Y)^2=4(1-A)^2$. Each event has probability $1/2$, so
+\[
+\ell_{\rm sq}(z)=2(1-A)^2,\qquad \psi_{\rm sq}(z)=-\ell'_{\rm sq}(z)=4A(1-A)^2.
+\]
+For logistic loss $\log(1+e^{-Yf})$, the same two events give $Yf=1$ and $Yf=2A-1$, respectively. Therefore
+\[
+\ell_{\rm log}(z)=\tfrac12\log(1+e^{-1})+\tfrac12\log(1+e^{1-2A}),\qquad
+\psi_{\rm log}(z)=A(1-A)\sigma(1-2A).
+\]
+Direct pointer supervision instead gives $\ell_{\rm ptr}(z)=-\log A=\log(1+e^{-z})$ and $\psi_{\rm ptr}(z)=1-A$. It is not logistic loss on the value readout. No multiplicative loss normalization is introduced in these comparisons.
+
+Using $1-\sigma(z)\sim e^{-z}$ as $z\to\infty$, and $\sigma(-x)\sim e^{-x}$ as $x\to\infty$, gives
+\begin{center}
+\begin{tabular}{@{}lll@{}}\toprule
+Loss & Positive tail & Negative tail\\\midrule
+Squared copy & $\psi(z)\sim4e^{-2z}$ & $\psi(-x)\sim4e^{-x}$\\
+Logistic readout & $\psi(z)\sim\sigma(-1)e^{-z}$ & $\psi(-x)\sim\sigma(1)e^{-x}$\\
+Pointer & $\psi(z)\sim e^{-z}$ & $\psi(-x)\to1$\\\bottomrule
+\end{tabular}
+\end{center}
+The nonzero minimum of logistic readout loss reflects the fixed bounded readout. It is a deliberate diagnostic model, not unconstrained classification with a trainable output layer.
+
+For a general differentiable outer loss, write $f=\sum_j A_jV_j$, $A=\operatorname{softmax}(z)$. Since $\partial_{z_j}f=A_j(V_j-f)$,
+\[
+\partial_{z_j}L=A_j\langle V_j-f,\nabla_fL\rangle.
+\]
+If $\norm{V_j}\le R$ and $\norm{\nabla_fL}\le G$, then $|\partial_{z_j}L|\le2RG A_j$. This is only an upper bound. A matching lower bound fails when the inner product vanishes or cancels; learned unbounded values or outer gradients require separate assumptions.
+
+\subsection{General scalar mobility}
+For $J=\sum_i p_i\ell_i(\beta d_i)$, $d_i=2\sin\phi_i$, define $\psi_i=-\ell_i'$ and $F=\sum_i p_i d_i\psi_i(\beta d_i)$. Consider a classical solution with fixed positive radii and
+\[
+\dot\beta=m(\beta)F,\qquad
+\dot\phi_i=2\rho p_i\beta\cos\phi_i\psi_i(\beta d_i)/r_i^2,
+\]
+where $\beta>0$, $|\phi_i|<\pi/2$, and $m$ is continuous and positive on the visited scale interval.
+\begin{proposition}
+The quantity
+\[
+Q_m=\rho\int_{\beta_0}^{\beta}\frac{u}{m(u)}\,du+\sum_i r_i^2\log\cos\phi_i
+\]
+is constant on the interval of existence of this solution.
+\end{proposition}
+\begin{proof}
+The fundamental theorem of calculus makes the scale derivative $\rho\beta F$. The angular derivative is
+\[
+-\sum_i r_i^2\tan\phi_i\dot\phi_i
+=-2\rho\beta\sum_i p_i\sin\phi_i\psi_i(\beta d_i)
+=-\rho\beta F.
+\]
+The terms cancel. No positivity of the kernel is needed for this identity, although positivity is needed for subsequent monotonicity arguments. The identity alone supplies neither global existence nor a scale cap.
+\end{proof}
+For a monotone differentiable reparameterization $\beta=q(s)$ with nonzero derivative and Euclidean flow $\dot s=-\partial_sJ=q'(s)F$, one has $m(\beta)=q'(s)^2$. Direct scale gives $m=1$; $q(s)=e^s$ gives $m=\beta^2$. The conserved scale terms are then $\rho(\beta^2-\beta_0^2)/2$ and $\rho\log(\beta/\beta_0)$.
+
+\subsection{Positive floor plus a fixed cap: what it does guarantee}
+\begin{lemma}
+Fix a group with $p_i>0$, $r_i>0$, initial $\phi_{i0}\in(-\pi/2,0)$, and target $\phi_*\in[0,\pi/2)$. Suppose the angle follows the equation above, $\psi_i$ is continuous and strictly positive on the relevant finite argument interval, and throughout the pre-hit solution
+\[
+0<\underline\beta\le\beta(t)\le\overline\beta<\infty,
+\]
+with both bounds independent of $\rho$. Then its hitting time of $\phi_*$ is at most $C/\rho$, where
+\[
+C=\frac{(\phi_*-\phi_{i0})r_i^2}
+{2p_i\underline\beta\,c_*\psi_*},\quad
+c_*:=\min_{\phi\in[\phi_{i0},\phi_*]}\cos\phi>0,
+\]
+\[
+\psi_*:=\min\{\psi_i(2b\sin\phi):b\in[\underline\beta,\overline\beta],\ \phi\in[\phi_{i0},\phi_*]\}>0.
+\]
+Existence through the required finite interval, or continuation under the stated bounded positive-scale dynamics, is assumed.
+\end{lemma}
+\begin{proof}
+Until the hit, $\dot\phi_i\ge2\rho p_i\underline\beta c_*\psi_*/r_i^2>0$. Integrating this constant lower speed makes a failure to hit by $C/\rho$ impossible. Compactness and continuity justify the positive minima, not a sampled grid.
+\end{proof}
+A cap alone does not establish the positive floor. Moreover, $\psi_*$ can be exponentially small in the cap; polynomial order in $1/\rho$ does not imply a useful practical constant. Clipping a raw log-scale parameter, clamping its forward value, and projecting beta at a boundary are different algorithms. None is substituted for another here.
+
+\section{What is still a conjecture}
+Suppose a future family has exact two-sided exponential orders
+\[
+c_+e^{-\kappa z}\le\psi(z)\le C_+e^{-\kappa z},\qquad
+c_-e^{-x}\le\psi(-x)\le C_-e^{-x}
+\]
+for large positive $z,x$, with positive constants. With $0<g_0<a_0/\kappa<2$, a frozen wrong direction and balance $\kappa d_1=a_0$ suggest
+\[
+b_{\kappa,\xi}=r_1\sqrt{\log\frac{1-g_0^2/4}{1-a_0^2/(4\kappa^2)}},\qquad
+c_{\kappa,\xi}=a_0b_{\kappa,\xi}.
+\]
+For direct-scale flow, a candidate law is $\sqrt\rho\log(1+T_0)\to c_{\kappa,\xi}$. For uncapped log-scale flow, candidate limits are
+\[
+\rho\log(B_\rho/\beta_0)\to b_{\kappa,\xi}^2/2,
+\qquad
+\rho\log\log(1+T_0)\to b_{\kappa,\xi}^2/2.
+\]
+These are not theorems in this version. Necessary work includes the positive-scale boundary, a live-entry estimate, control of the moving wrong group, all scale excursions, and bounds on the physical clock. Uniformity on an arbitrary compact subset of an admissible open region would require uniform versions of those arguments.
+
+One-sided tails are insufficient to identify the coefficient. In particular, copy-MSE satisfies both $\psi(z)\le4e^{-2z}$ and the weaker $\psi(z)\le4e^{-z}$ for $z\ge0$, while its negative tail has an $e^{-x}$ lower bound. Thus the proposed one-sided conditions would allow both $\kappa=2$ and $\kappa=1$ for the same loss. The established coefficient cannot equal both candidate values. This is why the new main text does not replace the existing theorem with an unproved general statement.
+
+\section{Persistent risk follows from the existing theorem}
+The preserved proof supplement shows that Fixed attains gaps at least $\gamma=.2$ by $40/\rho$ and retains them for all later finite times. Before Joint's first correction, $d_2^J(t)<0$. Thus, for every time in $[40/\rho,T_0^J)$ and every $M\ge1$,
+\[
+\inf_{b\ge0}R_M^J(t;b,\xi)\ge p_\xi M/(M+1),\qquad
+R_M^F(t;b_M,\xi)\le p_{\min}/4.
+\]
+The contrast is at least $p_{\min}/4=49/4000$ on the box. The common small-$\rho$ cutoff is independent of $t$ in this interval and of $M$; the evaluation scale depends on $M$.
+
+To justify the duration statement, the uniform positive lower exponent gives $T_0^J\ge e^{c_{\min}/(2\sqrt\rho)}-1$ below a common cutoff. Therefore $r_\rho=(40/\rho)/T_0^J\to0$ uniformly. Since
+\[
+\log(T_0^J-40/\rho)=\log T_0^J+\log(1-r_\rho),
+\]
+the additional term times $\sqrt\rho$ tends to zero uniformly. The same leading coefficient applies to the duration. This is a strengthened presentation of an immediate corollary, not a new independent generalization theorem.
+
+\section{Numerical comparison definitions}
+The additional GF records are the bounded checks supplied with the feedback discussion, not new simulations run during manuscript editing. Both arms use the same loss, initial state, radii and direction rate. Each time ratio compares the event $d_2=0$ in both arms. It does not compare Joint's zero crossing with Fixed's positive-margin event.
+
+\begin{center}\small
+\begin{tabular}{@{}rrrrr@{}}\toprule
+$\rho$ & Copy, direct $T_J/T_F$ & Copy direct $\log(1+T_J)$ & Copy log-scale $\log(1+T_J)$\\\midrule
+.1 & .754426 & 4.814218 & --\\
+.03 & 1.009997 & 6.303622 & 12.236884\\
+.02 & 1.252206 & 6.923200 & 28.530087\\
+.015 & 1.554381 & 7.426663 & 75.238240\\
+.01 & 2.401639 & 8.266864 & --\\
+.003 & 40.408682 & 12.293478 & --\\
+.001 & 12709.419587 & 19.143139 & --\\\bottomrule
+\end{tabular}
+\end{center}
+The losses in Section A use their unaltered population averaging factors. Ratios within a loss do not by themselves compare absolute training efficiency across losses. Direct and log-scale coordinates both have initial mobility one because $\beta_0=1$. Selected runs were checked using tighter tolerances and direct physical-time integration. The stored peak field is an accepted-node maximum, not a separately optimized supremum. The main paper uses these records for correction times, not for a new peak theorem.
+
+The original 27-path uniform-law checks and 36 Cartesian GD trajectories are distinct data families. Their detailed tables remain in \texttt{results/selected} and the public evidence index. The original GD strict cutoff, the closed $10^{-9}$ result, and the fixed anchor are separate scopes; data between them are not automatically certified.
+
+\section{Pretrained-model methods and evidence}
+\subsection{Different diagnostics answer different questions}
+The controlled Swin comparison uses all 240 training images whose bird/background labels conflict. This grouping is a data property, not the theorem's negative attention gap. The common-clipping policies differ in whether native log-scale parameters are updated; both gradients enter the same clipping definition. Seed 1103's $37/25760$ training error-area contrast and seed 1104's $-99/51520$ have opposite signs. The archive closeout recomputes both seeds from saved group correct counts. This is a group-count reconstruction, not a new model or raw-logit audit. Matrix weight decay is $.05$ and bias/norm/scale decay is zero. An observed rotation size or net scale change does not identify the theorem's $\rho$.
+
+The Qwen records use revision \texttt{c1899de289a04d12100db370d81485cdf75e47ca} and the installed native implementation identified in the source package. The task has 256 document clusters and one question per cluster, drawn from SQuAD train (164) and QED train (92). The final design changed from the original SQuAD-only proposal before final model evaluation. Static-trial compliance failures remain part of its history. Article genealogy beyond recorded identifiers and absence from model pretraining are not certified. Repeated synthetic names limit lexical coverage. QED annotation redistribution permission was not resolved by these experiments; public release must be reviewed separately.
+
+The all-layer test differentiates mean answer-token CE, excluding prompt and EOS loss; EOS is measured separately. The direction uses DEV-Neutral only. If $P$ is the blockwise Euclidean projection and $a_{\max}$ its normalization, then for evaluation group $X$,
+\[
+B_X=-\langle PG_X,PG_{DN}\rangle/a_{\max}.
+\]
+Hence its sign measures alignment in this particular projected metric. Rescaling the direction changes its magnitude. This is neither a coordinate-invariant claim nor an AdamW update prediction.
+
+\subsection{Historical saved-data reaggregation}
+The v0.5 revision reported a separately written reconstruction of the saved
+STEP15 gradients and finite-probe records. That historical check is not repeated
+with a model in this closeout. The public archive provides layer-level sums and
+finite-displacement means; it excludes question text, token IDs, model weights,
+and large per-item gradients. The closeout recomputes the reported slopes from
+all 28 stored layer contributions. No generated-answer benefit was measured.
+The numerical result remains a joint decrease of Neutral and Confusable
+correct-answer loss, rather than the proposed conflict.
+\section{Notation, source mapping, and deferred claims}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}p{.22\linewidth}p{.24\linewidth}Y@{}}\toprule
+Main notation & Preserved proof notation & Meaning\\\midrule
+$1,2$ & $e,h$ & Initially positive/negative ranking groups\\
+$d_1,d_2$ & $g,h$ & Score gaps\\
+$\psi$ & $K$ & Negative loss derivative\\
+$\mathcal B$ & $K_0$ & Same six-dimensional closed initialization box\\
+$\mathrm F$ & Hold or $H$ & Fixed initial scale policy\\
+$b_M$ & $b_M^K$ & Same box-uniform evaluation rule\\\bottomrule
+\end{tabularx}
+\end{center}
+The established sharp-flow theorem maps to Sections S.1--S.4 of the preserved proof supplement; Fixed and risk map to S.5; discrete updates and the two finite-budget regimes map to S.6--S.9. The persistent-time statement and Section A of this addendum are new direct derivations. Neither the generalized tail law nor log-scale sharp asymptotics is marked proved.
+
+Detailed stage numbers, initialization tables, old raw/common risk reversals, and failed recall attempts remain in the separate claims/evidence roadmap and source records. They are not erased, but do not interrupt the main argument. Only the allowlisted public numerical records accompany this archive. Dataset text and large native traces are excluded; see \texttt{docs/DATA\_AND\_LICENSES.md}. Reference metadata is preserved from v0.5, without a new literature survey.
+
+The bounded controlled comparison was completed as STEP16R and is summarized in the archived main report. The project ended after STEP18. A generalized tail theorem, arbitrary-initialization sharp law, and log-scale sharp time theorem were not established in this project. No further experiment is scheduled.
+\end{document}

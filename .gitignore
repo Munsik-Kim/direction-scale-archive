@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+reproduced/
+checks/
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/supplement/*.aux
+manuscript/supplement/*.log
+manuscript/supplement/*.out
+manuscript/supplement/*.toc
+.env
+*.safetensors
+*.pt
+*.pth
