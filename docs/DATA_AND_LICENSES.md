@@ -35,4 +35,14 @@ The method references preserved in the manuscript credit the original Waterbirds
 
 No new MIT, Apache, Creative Commons, or other blanket license is assigned. No verified project license or approved author/affiliation metadata was supplied for this public closeout; therefore LICENSE and CITATION.cff are not fabricated. Access to this record does not itself grant a blanket reuse license. A future placement under an existing repository license would need its scope checked before posting.
 
+Public access and separate permission to copy, modify, redistribute, or use material commercially are distinct. This clarification assigns no license to the project or any individual file. Reproduction commands describe technical capability, not blanket reuse permission. This guidance does not restrict lawful citation, applicable copyright limitations or exceptions, unprotected ideas, mathematical methods or facts, or rights provided by [GitHub's Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service#d-user-generated-content), including viewing and forking public repositories.
+
+Code, manuscript/proof expression, figures, aggregate numerical data, and synthetic saved states are separate material categories. These documents do not establish all rights-holders or rights for every file. Neither project guidance nor any future permission for authored material replaces third-party rights in source text, images, annotations, implementation copies or weights.
+
+For proposed manuscript republication, translation or adaptation, figure republication, code/data-bundle redistribution or product incorporation, identify the relevant rights-holder and intended scope wherever separate permission is needed. No such permission is granted here.
+
+### Scope inquiries
+
+Use [repository Issues](https://github.com/Munsik-Kim/direction-scale-archive/issues) for public scope inquiries. This is an intake route, not a verified rights-holder contact or licensing authority. State the files/version, purpose, modification/redistribution plans, and public/commercial scope. Do not post private data or personal information. An inquiry or response alone is not authorization.
+
 The selected model-free aggregates and authored synthetic specifications support the documented reproduction levels. Complete native reruns need separately and legitimately obtained local assets and the original larger records; no download or account access is performed by this payload.

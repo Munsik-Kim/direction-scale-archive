@@ -9,18 +9,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 5286,
-      "sha256": "219391e3c72a64923ed1597281d7fbddfe65d074387404d9de82a74c822f3807"
+      "bytes": 6120,
+      "sha256": "7b86192a04dca4db94286b69943c0c51e00760987f344d842e07f1146650c5a6"
     },
     {
       "path": "README_KO.md",
-      "bytes": 3892,
-      "sha256": "41d72795c9236094ae57f8a23bf1a3ab61cc154023139648f87fab28f1ad2b41"
+      "bytes": 4889,
+      "sha256": "74395f8eabaa1fee44873169c1046c85039a1ab06405b0cc0a62e4f09d8082b3"
     },
     {
       "path": "REPRODUCE.md",
-      "bytes": 4545,
-      "sha256": "3cee07c56c73202c65bb438fb40d0547fba067f7b74df89dc9eae11646ccabf3"
+      "bytes": 4772,
+      "sha256": "1299e560944e4cff020c64b030239d55e04ee8b1869906cdb03170594add9b29"
     },
     {
       "path": "STATUS.md",
@@ -29,8 +29,8 @@
     },
     {
       "path": "docs/DATA_AND_LICENSES.md",
-      "bytes": 4793,
-      "sha256": "2d0a38bc80cdeffbb15627622e99891fc7ee387650b89a0e222d33800a955716"
+      "bytes": 6498,
+      "sha256": "b7a6341fa3650f47ce94c2e5aac8cd513d774b50c06d01fa4b873dce11081fed"
     },
     {
       "path": "docs/EXPERIMENTS.md",

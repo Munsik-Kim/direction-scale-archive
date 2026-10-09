@@ -30,6 +30,14 @@ python scripts/verify_public_bundle.py --root .
 
 명령은 모델 추론·학습·ODE 적분·최소-norm 재최적화를 호출하지 않습니다. Swin은 집단 정답 수, Qwen은 count·층별 집계표 수준의 재현입니다. 통제 모형은 작은 W/beta/v/o 배열에서 손실과 등록 지표를 재계산합니다. [재현 범위](REPRODUCE.md)에 세 수준을 구분했습니다.
 
+## 인용 안내
+
+승인된 공개 저자 메타데이터는 보류 중이므로, 제목을 먼저 쓰는 임시 인용 형식을 제공합니다.
+
+> *Correction Delays in Shared-Scale Attention*. (2026). 연구 아카이브, **v0.6-archive**. 공개일 **2026-10-08**. [저장소](https://github.com/Munsik-Kim/direction-scale-archive); [고정 기록: 커밋 e6b1b5aad87b48d9775ef4136a018ded277cfa81](https://github.com/Munsik-Kim/direction-scale-archive/tree/e6b1b5aad87b48d9775ef4136a018ded277cfa81).
+
+`Munsik-Kim`은 저장소 경로의 계정 식별자이며 저자 실명·단독 저자·권리자를 뜻하지 않습니다. `v0.6-archive`는 문서 버전이며 Git 태그나 GitHub Release를 뜻하지 않습니다. 이 인용 안내는 서지 정보이며 라이선스나 재사용 허가를 부여하지 않습니다. [권리 안내](docs/DATA_AND_LICENSES.md#rights-and-attribution)를 함께 확인하세요.
+
 Waterbirds 이미지, SQuAD/QED 문항·근거·답변·토큰 ID, 모델 Weight, 개인 경로와 비공개 배송 기록은 공개 묶음에 없습니다. QED annotation 권리는 미확인 상태를 유지합니다. 프로젝트 라이선스·저자 정보도 임의로 부여하지 않았습니다. [데이터와 공개 범위](docs/DATA_AND_LICENSES.md)를 확인하세요.
 
-새 실험·학습·ODE 적분·자동 후속은 없습니다. 이 표시는 연구 종료 상태이며 GitHub 저장소의 archive 설정을 변경했다는 뜻은 아닙니다.
+새 실험·학습·ODE 적분·자동 후속은 없습니다. 이 표시는 이 연구의 종료 상태이며, GitHub 저장소를 읽기 전용으로 바꾸거나 다른 연구자의 독립적인 후속 연구를 금지한다는 뜻은 아닙니다.

@@ -44,8 +44,16 @@ These commands read saved tables and small synthetic arrays. They do not downloa
 
 The archive manuscript was edited from the supplied v0.5 source. **PDF_NOT_BUILT:** no TeX compiler was available in the closeout environment. No old PDF is presented as the new version. The six PNG figures were regenerated and visually checked. The manuscript source includes a no-shell-escape [build script](manuscript/build.sh); PDF layout and page count remain unverified.
 
+## Citation
+
+Provisional title-first citation; approved public author metadata is pending:
+
+> *Correction Delays in Shared-Scale Attention*. (2026). Research archive, **v0.6-archive**. Published **2026-10-08**. [Repository](https://github.com/Munsik-Kim/direction-scale-archive); [fixed record, commit e6b1b5aad87b48d9775ef4136a018ded277cfa81](https://github.com/Munsik-Kim/direction-scale-archive/tree/e6b1b5aad87b48d9775ef4136a018ded277cfa81).
+
+`Munsik-Kim` is the repository-account identifier, not an attribution of an author's real name, sole authorship, or rights ownership. `v0.6-archive` identifies the document version, not a Git tag or GitHub Release. This bibliographic notice grants no license or reuse permission; see [rights and attribution](docs/DATA_AND_LICENSES.md#rights-and-attribution).
+
 ## Archive boundaries
 
 Only selected authored material, aggregate native-model results, and small controlled-population states are distributed. Dataset text, question/answer/completion records, reconstructable token IDs, images, pretrained weights, large checkpoints, private provenance, and delivery receipts are excluded. QED annotation redistribution permission remains unverified. No project-wide reuse license or author identity is invented.
 
-This is a research-record status, not a claim that a hosting repository was made read-only. There is no scheduled next experiment or automatic training stage. See [STATUS.md](STATUS.md).
+This research-record status does not make the GitHub repository read-only or prohibit independent research by others. There is no scheduled next experiment or automatic training stage. See [STATUS.md](STATUS.md).

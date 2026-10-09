@@ -19,6 +19,8 @@ The scripts accept the shown arguments; input and output paths may be absolute. 
 | 2. Small synthetic numerical arrays | Six H3 trajectories, 401 stored nodes each, W/beta/v/o packing | Recalculate gaps, population MSE, c, P17 on the registered grid; inspect original readout witnesses and LS representation |
 | 3. Historical complete learning / inference | External datasets, model weights, large native gradients, original private inputs and full drivers are omitted | Not performed or validated in this closeout; not a default command, test, build, or CI job |
 
+The technical availability of Levels 1–2 is separate from permission for a proposed use; see [rights and attribution](docs/DATA_AND_LICENSES.md#rights-and-attribution). This clarification supplies no omitted Level 3 assets.
+
 The minimal mathematical STEP17 functions in [experiments/step17/model.py](experiments/step17/model.py) preserve their original formulas with an import-path change. They have no integration driver. The public summary script is a separate arithmetic implementation and does not import that historical model. Training, generation and ODE solvers are intentionally absent from Quickstart.
 
 ## What is actually recalculated
