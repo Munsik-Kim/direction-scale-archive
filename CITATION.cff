@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please cite the archived report using the author and title below."
+title: "Correction Delays in Shared-Scale Attention"
+authors:
+  - family-names: Kim
+    given-names: Munsik
+version: "v0.6-archive"
+date-released: "2026-10-08"
+repository-code: "https://github.com/Munsik-Kim/direction-scale-archive"
+url: "https://github.com/Munsik-Kim/direction-scale-archive"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+license-url: "https://github.com/Munsik-Kim/direction-scale-archive/blob/main/LICENSE_SCOPE.md"
+abstract: >-
+  Archived restricted theory, controlled numerical comparisons and
+  pretrained-model tests of attention scale and correction delay.
+  The record preserves negative findings and unresolved limits;
+  it does not establish a general training prescription.

@@ -19,7 +19,7 @@ The scripts accept the shown arguments; input and output paths may be absolute. 
 | 2. Small synthetic numerical arrays | Six H3 trajectories, 401 stored nodes each, W/beta/v/o packing | Recalculate gaps, population MSE, c, P17 on the registered grid; inspect original readout witnesses and LS representation |
 | 3. Historical complete learning / inference | External datasets, model weights, large native gradients, original private inputs and full drivers are omitted | Not performed or validated in this closeout; not a default command, test, build, or CI job |
 
-The technical availability of Levels 1–2 is separate from permission for a proposed use; see [rights and attribution](docs/DATA_AND_LICENSES.md#rights-and-attribution). This clarification supplies no omitted Level 3 assets.
+Levels 1–2 use the published project code and material under [Apache-2.0 / CC BY 4.0](LICENSE_SCOPE.md). Follow the relevant notices and attribution terms. Level 3 assets remain omitted and subject to their separate source terms.
 
 The minimal mathematical STEP17 functions in [experiments/step17/model.py](experiments/step17/model.py) preserve their original formulas with an import-path change. They have no integration driver. The public summary script is a separate arithmetic implementation and does not import that historical model. Training, generation and ODE solvers are intentionally absent from Quickstart.
 
@@ -39,12 +39,12 @@ NPZ loading uses allow_pickle=False. Arrays contain only numerical synthetic sta
 
 The six fixed-topic PNG files are under [manuscript/figures](manuscript/figures). The figure script writes new copies, without selecting favorable cells, seeds, or heads.
 
-The English manuscript is [manuscript/main.tex](manuscript/main.tex). With a separately available XeLaTeX installation:
+The [English report PDF](manuscript/main.pdf), [proof supplement PDF](manuscript/supplement/TYPESET_PROOF_SUPPLEMENT_EN.pdf) and [scope addendum PDF](manuscript/supplement/Scope_Addendum_EN.pdf) were built on 2026-10-22. Sources and checksums are in the [build record](manuscript/PDF_BUILD.md). With XeLaTeX or Tectonic already installed, rebuild into a new directory:
 
 ~~~bash
-bash manuscript/build.sh
+bash manuscript/build.sh /tmp/direction-scale-pdf-NEW_ID
 ~~~
 
-The build script checks for XeLaTeX first and uses -no-shell-escape. It only typesets the main report and preserved supplements; it never launches a scientific experiment or installs TeX. No TeX compiler was available here, so **the new PDF and its page layout are unverified**. No earlier PDF is substituted.
+The script uses XeLaTeX with -no-shell-escape or Tectonic with --untrusted. Tectonic may fetch TeX resource files on first use. The command only typesets the report and preserved supplements; it does not install an engine or launch a scientific experiment. The original closeout's PDF_NOT_BUILT status is retained as history in [STATUS.md](STATUS.md), alongside the completed build.
 
 The closeout tested Quickstart in a disposable directory containing only this payload. Privacy/source transformations and internal absolute-path provenance remain outside the public archive.
