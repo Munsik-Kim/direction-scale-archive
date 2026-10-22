@@ -3,15 +3,15 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[margin=25mm,headheight=13pt,headsep=6mm,footskip=10mm]{geometry}
 \usepackage{fontspec}
-\IfFontExistsTF{Nimbus Roman}{\setmainfont{Nimbus Roman}}{\setmainfont{TeX Gyre Termes}}
-\IfFontExistsTF{Nimbus Sans}{\setsansfont{Nimbus Sans}[Scale=MatchLowercase]}{\setsansfont{TeX Gyre Heros}[Scale=MatchLowercase]}
-\setmonofont{Latin Modern Mono}[Scale=.85]
+\IfFontExistsTF{Nimbus Roman}{\setmainfont{Nimbus Roman}}{\setmainfont{texgyretermes-regular.otf}[BoldFont=texgyretermes-bold.otf,ItalicFont=texgyretermes-italic.otf,BoldItalicFont=texgyretermes-bolditalic.otf]}
+\IfFontExistsTF{Nimbus Sans}{\setsansfont{Nimbus Sans}[Scale=MatchLowercase]}{\setsansfont{texgyreheros-regular.otf}[Scale=MatchLowercase,BoldFont=texgyreheros-bold.otf,ItalicFont=texgyreheros-italic.otf,BoldItalicFont=texgyreheros-bolditalic.otf]}
+\setmonofont{lmmono10-regular.otf}[Scale=.85]
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{unicode-math}
-\IfFontExistsTF{Asana Math}{\setmathfont{Asana Math}}{\setmathfont{Latin Modern Math}}
+\IfFontExistsTF{Asana Math}{\setmathfont{Asana Math}}{\setmathfont{latinmodern-math.otf}}
 \usepackage{graphicx,booktabs,tabularx,array,caption,microtype,fancyhdr,placeins,needspace}
 \usepackage[unicode,hidelinks]{hyperref}
-\hypersetup{pdftitle={Correction Delays in Shared-Scale Attention},pdfauthor={},pdfsubject={Archived research report; restricted results and unestablished native transfer}}
+\hypersetup{pdftitle={Correction Delays in Shared-Scale Attention},pdfauthor={Munsik Kim},pdfsubject={Archived research report; restricted results and unestablished native transfer}}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
@@ -37,6 +37,7 @@
 \begin{document}
 \begin{center}
 {\fontsize{17}{20}\selectfont\bfseries Correction Delays in Shared-Scale Attention}\par
+\vspace{4pt}{\small Munsik Kim}\par
 \vspace{4pt}{\small Archived research report --- v0.6-archive --- 8 October 2026}
 \end{center}
 \vspace{3pt}

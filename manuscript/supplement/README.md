@@ -13,4 +13,4 @@ Scope_Addendum_EN.tex preserves the v0.5 derivations. Editorial changes replace 
 
 Historical private source inventories, previous opinion files, large traces and original execution packets are not bundled. Public numeric sources are mapped by results/evidence_index.csv, and exclusions by docs/DATA_AND_LICENSES.md. These sources are preserved evidence, not a newly audited proof.
 
-No supplement PDF is relabeled as a new compiled product. Typesetting commands are in ../build.sh and require an independently available compiler.
+The [complete proof PDF](TYPESET_PROOF_SUPPLEMENT_EN.pdf) and [scope addendum PDF](Scope_Addendum_EN.pdf) were compiled on 2026-10-22. Their mathematical bodies are preserved; author attribution and portable font lookup are editorial updates. The [build and layout record](../PDF_BUILD.md) distinguishes this typesetting from scientific verification. Commands are in [build.sh](../build.sh).

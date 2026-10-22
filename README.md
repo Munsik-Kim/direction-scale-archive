@@ -1,10 +1,12 @@
 # Correction Delays in Shared-Scale Attention
 
-**Archived research report · v0.6-archive · CLOSED after STEP18**
+Derived and tested a restricted model of why attention can stay focused on the wrong information. This archive provides the proofs, comparison code, saved results and tests of related scale interventions on Swin and Qwen.
 
-This project studied a distinction in attention: changing the ordering of useful information versus increasing concentration on the current ordering. A shared learned scale can delay correction in an explicitly restricted population model. The result depends on the loss, scale coordinates, initial key geometry, and trainable information paths.
+**Munsik Kim** · Archived research report · v0.6-archive · CLOSED after STEP18
 
-The pretrained-model experiments **did not establish a repeatable training benefit from freezing scales or a general scale-mediated failure mechanism**. This does not prove that such effects are impossible in every Transformer. The project ended after STEP18; its results, negative evidence, code, and limits are preserved.
+[Report PDF](manuscript/main.pdf) · [Code and reproduction](REPRODUCE.md) · [한국어](README_KO.md)
+
+In the restricted population model, learning a shared concentration scale can delay correction. The result depends on the loss, scale coordinates, initial key geometry and trainable information paths. The pretrained-model experiments **did not establish a repeatable training benefit from freezing scales or a general scale-mediated failure mechanism**. The project ended after STEP18; its positive, negative and unresolved results are preserved.
 
 ## What the record contains
 
@@ -26,7 +28,7 @@ Here **risk** is population MSE in the controlled models, not classification acc
 
 ## Read and reproduce
 
-- [English manuscript source](manuscript/main.tex) and [preserved complete proof supplement](manuscript/supplement/PROOF_SUPPLEMENT_EN.md).
+- [English report PDF](manuscript/main.pdf), [manuscript source](manuscript/main.tex), [proof PDF](manuscript/supplement/TYPESET_PROOF_SUPPLEMENT_EN.pdf) and [complete proof source](manuscript/supplement/PROOF_SUPPLEMENT_EN.md).
 - [Experiment purposes, scales, results, and counterevidence](docs/EXPERIMENTS.md).
 - [Scope and limitations](docs/SCOPE_AND_LIMITATIONS.md), [data and rights boundaries](docs/DATA_AND_LICENSES.md).
 - [Metric-level evidence index](results/evidence_index.csv) and [numerical summary](results/summary.csv).
@@ -42,18 +44,18 @@ python scripts/verify_public_bundle.py --root .
 
 These commands read saved tables and small synthetic arrays. They do not download assets, run a neural model, train, differentiate a model, integrate an ODE, or optimize a readout. See [REPRODUCE.md](REPRODUCE.md) for the distinction between aggregate reproduction, array-based recalculation, and historical full reruns.
 
-The archive manuscript was edited from the supplied v0.5 source. **PDF_NOT_BUILT:** no TeX compiler was available in the closeout environment. No old PDF is presented as the new version. The six PNG figures were regenerated and visually checked. The manuscript source includes a no-shell-escape [build script](manuscript/build.sh); PDF layout and page count remain unverified.
+The report PDF (10 pages) and preserved supplements (15 and 4 pages) were compiled and checked on 2026-10-22. The [build and layout record](manuscript/PDF_BUILD.md) lists the source and PDF hashes; the [build script](manuscript/build.sh) supports XeLaTeX or Tectonic.
 
 ## Citation
 
-Provisional title-first citation; approved public author metadata is pending:
+Author: **Munsik Kim**. Machine-readable citation metadata is in [CITATION.cff](CITATION.cff).
 
-> *Correction Delays in Shared-Scale Attention*. (2026). Research archive, **v0.6-archive**. Published **2026-10-08**. [Repository](https://github.com/Munsik-Kim/direction-scale-archive); [fixed record, commit e6b1b5aad87b48d9775ef4136a018ded277cfa81](https://github.com/Munsik-Kim/direction-scale-archive/tree/e6b1b5aad87b48d9775ef4136a018ded277cfa81).
+> Kim, Munsik. (2026). *Correction Delays in Shared-Scale Attention*. Research archive, **v0.6-archive**. Published **2026-10-08**. [Repository](https://github.com/Munsik-Kim/direction-scale-archive); [fixed record, commit e6b1b5aad87b48d9775ef4136a018ded277cfa81](https://github.com/Munsik-Kim/direction-scale-archive/tree/e6b1b5aad87b48d9775ef4136a018ded277cfa81).
 
-`Munsik-Kim` is the repository-account identifier, not an attribution of an author's real name, sole authorship, or rights ownership. `v0.6-archive` identifies the document version, not a Git tag or GitHub Release. This bibliographic notice grants no license or reuse permission; see [rights and attribution](docs/DATA_AND_LICENSES.md#rights-and-attribution).
+`v0.6-archive` identifies the document version, not a Git tag or GitHub Release. See [license scope](LICENSE_SCOPE.md) for permitted reuse and attribution.
 
 ## Archive boundaries
 
-Only selected authored material, aggregate native-model results, and small controlled-population states are distributed. Dataset text, question/answer/completion records, reconstructable token IDs, images, pretrained weights, large checkpoints, private provenance, and delivery receipts are excluded. QED annotation redistribution permission remains unverified. No project-wide reuse license or author identity is invented.
+Only selected authored material, aggregate native-model results, and small controlled-population states are distributed. Dataset text, question/answer/completion records, reconstructable token IDs, images, pretrained weights, large checkpoints, private provenance, and delivery receipts are excluded. QED annotation redistribution permission remains unverified. Original code uses [Apache-2.0](LICENSE); report text, proofs, figures and public numerical material use [CC BY 4.0](LICENSE-PAPER). Both permit modification, redistribution and commercial use under their notice and attribution terms. [License scope](LICENSE_SCOPE.md) maps the material; third-party source rights remain separate.
 
 This research-record status does not make the GitHub repository read-only or prohibit independent research by others. There is no scheduled next experiment or automatic training stage. See [STATUS.md](STATUS.md).

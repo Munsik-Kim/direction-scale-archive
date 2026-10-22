@@ -2,11 +2,12 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage[margin=25mm,headheight=13pt]{geometry}
 \usepackage{fontspec}
-\IfFontExistsTF{Nimbus Roman}{\setmainfont{Nimbus Roman}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Nimbus Roman}{\setmainfont{Nimbus Roman}}{\setmainfont{texgyretermes-regular.otf}[BoldFont=texgyretermes-bold.otf,ItalicFont=texgyretermes-italic.otf,BoldItalicFont=texgyretermes-bolditalic.otf]}
 \usepackage{amsmath,amssymb,amsthm,mathtools,unicode-math}
 \IfFontExistsTF{Asana Math}{\setmathfont{Asana Math}}{\setmathfont{latinmodern-math.otf}}
 \usepackage{booktabs,tabularx,longtable,graphicx,fancyhdr,microtype}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Loss Tails, Scale Mobility, and Evidence Scope},pdfauthor={Munsik Kim}}
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{lemma}[proposition]{Lemma}
 \newcommand{\E}{\mathbb E}\newcommand{\norm}[1]{\lVert#1\rVert}
@@ -15,7 +16,7 @@
 \renewcommand{\arraystretch}{1.12}
 \pagestyle{fancy}\fancyhf{}\fancyhead[L]{\footnotesize Shared-Scale Attention: technical addendum}\fancyhead[R]{\footnotesize v0.5}\fancyfoot[C]{\thepage}
 \begin{document}
-\begin{center}{\Large\bfseries Loss Tails, Scale Mobility, and Evidence Scope}\par\vspace{5pt}Supplement to the v0.5 manuscript\end{center}
+\begin{center}{\Large\bfseries Loss Tails, Scale Mobility, and Evidence Scope}\par\vspace{5pt}Munsik Kim\par\vspace{5pt}Supplement to the v0.5 manuscript\end{center}
 The earlier complete English proof supplement is preserved separately. This addendum supplies direct derivations used in the revised main text, defines the unproved extensions, and records the evidence supporting the new tables. It does not replace the established copy-MSE theorem with a theorem for all losses. The algebra below was written during the revision and has not undergone a separate external mathematical review.
 \appendix
 \section{Exact identities and a conditional bounded-scale estimate}

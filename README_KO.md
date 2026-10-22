@@ -1,10 +1,12 @@
 # Shared-Scale Attention의 교정 지연 — 연구 종료 기록
 
-**v0.6-archive · CLOSED / ARCHIVED_RESEARCH_RECORD · STEP18에서 종료**
+Attention이 잘못된 정보에 계속 집중하는 조건을 제한 모형의 정리와 비교 실험으로 분석했습니다. 증명, 실험 코드, 저장 결과와 실제 Swin·Qwen에서 확인한 한계를 함께 공개합니다.
 
-이 연구는 Attention이 유용한 정보를 **올바른 순위로 고르는 과정**과 현재 순위에 **더 강하게 집중하는 과정**을 구분했습니다. 명시된 제한 모형에서는 공유 Scale을 학습할 때 순위 교정이 늦어지는 정리와 수치 결과를 확보했습니다. 그러나 손실, Scale 좌표, 초기 Key 기하, 학습 가능한 정보 경로가 달라지면 도움과 손해도 달라졌습니다.
+**저자: Munsik Kim** · v0.6-archive · CLOSED / ARCHIVED_RESEARCH_RECORD · STEP18에서 종료
 
-실제 사전학습 Swin·Qwen에서는 Scale 고정의 반복 가능한 학습 이점이나 범용적인 Scale 매개 병목을 입증하지 못했습니다. 모든 Transformer에서 불가능하다는 증명도 아닙니다. 연구를 더 확대하지 않고 확보한 결과와 반대 근거를 보존합니다.
+[보고서 PDF](manuscript/main.pdf) · [코드와 재현 안내](REPRODUCE.md) · [English](README.md)
+
+정보의 순위를 고르는 과정과 그 순위에 강하게 집중하는 정도를 구분했습니다. 제한 모형에서는 공유 scale을 학습할 때 순위 교정이 늦어지는 결과를 얻었지만, 손실·초기조건·학습 경로에 따라 효과가 달랐습니다. 실제 사전학습 Swin·Qwen에서는 scale 고정의 반복 가능한 학습 이점을 입증하지 못했습니다. 확보한 결과와 반대 근거를 보존하고 연구를 종료했습니다.
 
 | 실험군 | 비교와 실제 결과 | 해석의 한계 |
 | --- | --- | --- |
@@ -18,7 +20,7 @@
 
 [실험 목적·규모·반대 결과](docs/EXPERIMENTS.md), [주장 범위](docs/SCOPE_AND_LIMITATIONS.md), [수치표](results/summary.csv), [근거 연결표](results/evidence_index.csv)를 함께 보세요. 원고는 [영문 종료판 TeX](manuscript/main.tex)이며 기존 [완전 증명 부록](manuscript/supplement/PROOF_SUPPLEMENT_EN.md)을 보존했습니다.
 
-**새 종료판 PDF는 만들지 못했습니다(PDF_NOT_BUILT).** 현재 환경에 TeX 컴파일러가 없습니다. 과거 PDF를 이름만 바꿔 제공하지 않았으며 새 원고의 페이지 조판은 미검증입니다. 여섯 핵심 PNG 그림은 저장 수치로 재생성하고 열어 확인했습니다.
+**영문 종료판 PDF 10쪽과 기존 부록 15쪽·4쪽을 실제 조판하고 페이지를 확인했습니다.** [빌드·화면 검토 기록](manuscript/PDF_BUILD.md)에 원고와 PDF의 해시를 남겼습니다. 수식·증명·실험 결과는 보존했습니다.
 
 저장자료 재현은 다음 명령으로 합니다.
 
@@ -32,12 +34,12 @@ python scripts/verify_public_bundle.py --root .
 
 ## 인용 안내
 
-승인된 공개 저자 메타데이터는 보류 중이므로, 제목을 먼저 쓰는 임시 인용 형식을 제공합니다.
+저자는 **Munsik Kim**입니다. [CITATION.cff](CITATION.cff)에서 인용 메타데이터를 제공합니다.
 
-> *Correction Delays in Shared-Scale Attention*. (2026). 연구 아카이브, **v0.6-archive**. 공개일 **2026-10-08**. [저장소](https://github.com/Munsik-Kim/direction-scale-archive); [고정 기록: 커밋 e6b1b5aad87b48d9775ef4136a018ded277cfa81](https://github.com/Munsik-Kim/direction-scale-archive/tree/e6b1b5aad87b48d9775ef4136a018ded277cfa81).
+> Kim, Munsik. (2026). *Correction Delays in Shared-Scale Attention*. 연구 아카이브, **v0.6-archive**. 공개일 **2026-10-08**. [저장소](https://github.com/Munsik-Kim/direction-scale-archive); [고정 기록: 커밋 e6b1b5aad87b48d9775ef4136a018ded277cfa81](https://github.com/Munsik-Kim/direction-scale-archive/tree/e6b1b5aad87b48d9775ef4136a018ded277cfa81).
 
-`Munsik-Kim`은 저장소 경로의 계정 식별자이며 저자 실명·단독 저자·권리자를 뜻하지 않습니다. `v0.6-archive`는 문서 버전이며 Git 태그나 GitHub Release를 뜻하지 않습니다. 이 인용 안내는 서지 정보이며 라이선스나 재사용 허가를 부여하지 않습니다. [권리 안내](docs/DATA_AND_LICENSES.md#rights-and-attribution)를 함께 확인하세요.
+`v0.6-archive`는 문서 버전이며 Git 태그나 GitHub Release를 뜻하지 않습니다. 재사용과 출처 표시 조건은 [라이선스 범위](LICENSE_SCOPE.md)에 정리했습니다.
 
-Waterbirds 이미지, SQuAD/QED 문항·근거·답변·토큰 ID, 모델 Weight, 개인 경로와 비공개 배송 기록은 공개 묶음에 없습니다. QED annotation 권리는 미확인 상태를 유지합니다. 프로젝트 라이선스·저자 정보도 임의로 부여하지 않았습니다. [데이터와 공개 범위](docs/DATA_AND_LICENSES.md)를 확인하세요.
+Waterbirds 이미지, SQuAD/QED 문항·근거·답변·토큰 ID, 모델 Weight, 개인 경로와 비공개 배송 기록은 공개 묶음에 없습니다. QED annotation 권리는 미확인 상태를 유지합니다. 원본 코드는 [Apache-2.0](LICENSE), 논문·증명·그림·공개 수치 자료는 [CC BY 4.0](LICENSE-PAPER)을 적용합니다. 각 라이선스의 고지·출처 표시 조건에 따라 수정·재배포·상업적 이용이 가능합니다. [데이터와 공개 범위](docs/DATA_AND_LICENSES.md)를 확인하세요.
 
 새 실험·학습·ODE 적분·자동 후속은 없습니다. 이 표시는 이 연구의 종료 상태이며, GitHub 저장소를 읽기 전용으로 바꾸거나 다른 연구자의 독립적인 후속 연구를 금지한다는 뜻은 아닙니다.
